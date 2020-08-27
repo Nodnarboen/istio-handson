@@ -1,0 +1,9 @@
+#!/bin/bash
+
+kubectl apply -f ../utils/sampleapp/ingress/istioGatewayRules.yaml
+
+export INGRESS_URL=$(kubectl describe svc istio-ingressgateway -n istio-system | grep "LoadBalancer Ingress:" | sed 's~LoadBalancer Ingress:[ \t]*~~')
+
+echo "----------------------------------------------------"
+echo "Gateway is running at : http://$INGRESS_URL"
+echo "----------------------------------------------------"

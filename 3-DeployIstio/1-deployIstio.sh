@@ -9,7 +9,7 @@ echo "Waiting for Istio to start..."
 export KIALI_URL=$(kubectl describe svc kiali -n istio-system | grep "LoadBalancer Ingress:" | sed 's~LoadBalancer Ingress:[ \t]*~~')
 
 echo "----------------------------------------------------"
-echo "Jenkins is running at : http://$KIALI_URL"
+echo "Kiali is running at : http://$KIALI_URL"
 echo "Username is : admin"
 echo "Password is : admin"
 echo "----------------------------------------------------"

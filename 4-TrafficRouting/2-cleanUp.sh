@@ -1,3 +1,3 @@
 #!/bin/bash
 
-kubectl delete -f ../utils/sampleapp/traffic/routingapplication-no-istio.yaml
+kubectl delete -f ../utils/sampleapp/trafficrouting/application-no-istio.yaml

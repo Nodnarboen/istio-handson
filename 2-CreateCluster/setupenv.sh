@@ -43,9 +43,23 @@ deployGKE()
     export CLUSTER="sebootcamp-istio"
     export CLUSTER_NAME=${USER}-${CLUSTER}
 
+    export RAND=$(( $RANDOM % 3 + 1 ))
+
+    case $RAND in
+        1)
+        export ZONE="us-central1-a"
+        ;;
+        2)
+        export ZONE="us-east1-b"
+        ;;
+        3)
+        export ZONE="us-east4-a"
+        ;;
+    esac
+
     gcloud services enable container.googleapis.com
 
-    gcloud container clusters create $CLUSTER_NAME --zone=us-central1-a --num-nodes=3 --machine-type=n1-highmem-2 --image-type=Ubuntu
+    gcloud container clusters create $CLUSTER_NAME --zone=$ZONE --num-nodes=2 --machine-type=n1-highmem-2 --image-type=Ubuntu
 
     kubectl create clusterrolebinding cluster-admin-binding --clusterrole=cluster-admin --user=$(gcloud config get-value account)
 }

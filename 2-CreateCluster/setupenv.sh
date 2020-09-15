@@ -47,13 +47,13 @@ deployGKE()
 
     case $RAND in
         1)
-        export ZONE="asia-southeast1"
+        export ZONE="asia-southeast1-a"
         ;;
         2)
-        export ZONE="asia-southeast2"
+        export ZONE="asia-southeast2-b"
         ;;
         3)
-        export ZONE="australia-southeast1"
+        export ZONE="australia-southeast1-a"
         ;;
     esac
 

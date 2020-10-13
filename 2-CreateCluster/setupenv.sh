@@ -2,8 +2,10 @@
 
 export API_TOKEN=$(cat ../1-Credentials/creds.json | jq -r '.dynatraceApiToken')
 export PAAS_TOKEN=$(cat ../1-Credentials/creds.json | jq -r '.dynatracePaaSToken')
-export TENANTID=$(cat ../1-Credentials/creds.json | jq -r '.dynatraceTenantID')
+#export TENANTID=$(cat ../1-Credentials/creds.json | jq -r '.dynatraceTenantID')
 export ENVIRONMENTID=$(cat ../1-Credentials/creds.json | jq -r '.dynatraceEnvironmentID')
+
+TENANTID='mou612.managed-sprint.dynalabs.io'
 
 if hash gcloud 2>/dev/null; then
     echo "Google Cloud"
@@ -84,17 +86,17 @@ fi
 
 echo "Cluster created"
 
-echo "Deploying OneAgent Operator"
+#echo "Deploying OneAgent Operator"
 
-../utils/dynatrace/deploy-dt-operator.sh
+#../utils/dynatrace/deploy-dt-operator.sh
 
-case $CLOUD_PROVIDER in
-        GKE)
-        echo "-----------------------"
-        echo "Deployment Complete"
-        echo "-----------------------"
-        ;;
-    esac
+#case $CLOUD_PROVIDER in
+#        GKE)
+#        echo "-----------------------"
+#        echo "Deployment Complete"
+#        echo "-----------------------"
+#        ;;
+#    esac
 
 
 

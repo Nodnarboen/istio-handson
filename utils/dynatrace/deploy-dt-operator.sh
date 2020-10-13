@@ -25,7 +25,7 @@ case $ENVIRONMENTID in
         ;;
         *)
         echo "Managed Deployment"
-        sed -i 's/apiUrl: https:\/\/ENVIRONMENTID.live.dynatrace.com\/api/apiUrl: https:\/\/'$TENANTID'.managed-sprint.dynalabs.io\/e\/'$ENVIRONMENTID'\/api/' cr.yaml
+        sed -i 's/apiUrl: https:\/\/ENVIRONMENTID.live.dynatrace.com\/api/apiUrl: https:\/\/mou612.managed-sprint.dynalabs.io\/e\/'$ENVIRONMENTID'\/api/' cr.yaml
         sed -i 's/skipCertCheck: false/skipCertCheck: true/' cr.yaml
         ;;
         ?)

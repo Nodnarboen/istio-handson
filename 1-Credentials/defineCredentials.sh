@@ -7,8 +7,7 @@ CREDS=./creds.json
 rm $CREDS 2> /dev/null
 
 echo -e "${YLW}Please enter the credentials as requested below: ${NC}"
-read -p "Dynatrace Tenant ID (ex. https://<TENANT_ID>.live.dynatrace.com or https://<TENANT_ID>.dynatrace-managed.com): " DTTEN
-read -p "Dynatrace Environment ID (Dynatrace Managed Only - https://<TENANT_ID>.dynatrace-managed.com/e/<ENVIRONMENT_ID>): " DTENV
+read -p "Dynatrace Environment ID (Dynatrace Managed Only - https://mou612.managed-sprint.dynalabs.io/e/<ENVIRONMENT_ID>): " DTENV
 read -p "Dynatrace API Token: " DTAPI
 read -p "Dynatrace PaaS Token: " DTPAAS
 echo ""

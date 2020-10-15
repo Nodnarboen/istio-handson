@@ -15,6 +15,7 @@ elif hash microk8s 2>/dev/null; then
 else
     echo "No supported Provider (GCP or Microk8s) detected."
     exit 1;
+fi
 
 while true;
 do

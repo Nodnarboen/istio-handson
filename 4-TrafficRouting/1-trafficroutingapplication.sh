@@ -21,7 +21,7 @@ elif hash microk8s 2>/dev/null; then
     export APP_PORT=$(kubectl describe svc fleetman-webapp -n default | grep "NodePort:" | sed 's/[^0-9]*//g')
     export APP_URL=$DOMAIN:$APP_PORT
 else
-    echo "No supported Provider (GCP or AKS or Microk8s) detected."
+    echo "No supported Provider (GCP or Microk8s) detected."
     exit 1;
 
 echo "----------------------------------------------------"

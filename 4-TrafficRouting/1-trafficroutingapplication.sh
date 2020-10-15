@@ -24,9 +24,6 @@ else
     echo "No supported Provider (GCP or AKS or Microk8s) detected."
     exit 1;
 
-
-export APP_URL=$(kubectl describe svc fleetman-webapp -n default | grep "LoadBalancer Ingress:" | sed 's~LoadBalancer Ingress:[ \t]*~~')
-
 echo "----------------------------------------------------"
 echo "Application is running at : http://$APP_URL"
 echo "----------------------------------------------------"

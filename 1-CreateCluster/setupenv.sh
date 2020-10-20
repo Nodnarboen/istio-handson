@@ -5,7 +5,7 @@
     echo "Creating GKE Cluster..."
 
     export USER=$(gcloud auth list --filter=status:ACTIVE --format="value(account)" | awk -F"@" '{print $1}' | sed 's/\./-/g')
-    export CLUSTER="sebootcamp-istio"
+    export CLUSTER="APACbootcamp-istio"
     export CLUSTER_NAME=${USER}-${CLUSTER}
 
     export RAND=$(( $RANDOM % 3 + 1 ))
